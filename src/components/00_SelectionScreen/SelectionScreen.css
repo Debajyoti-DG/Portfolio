@@ -1,0 +1,47 @@
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--primary-color);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.selection-title {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.option-card {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid #333;
+  padding: 40px 60px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}

@@ -1,0 +1,61 @@
+:root {
+  --primary-color: #0a0a0a;
+  --secondary-color: #1a1a1a;
+  --accent-color: #007bff; /* A nice blue for highlights */
+  --text-color: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+/* --- NEW: Theme Overrides --- */
+body.theme-developer {
+  --accent-color: #39d353; /* GitHub Green */
+}
+
+body.theme-adventurer {
+  --accent-color: #e86a33; /* Earthy Orange */
+}
+
+body.theme-stalker {
+  --accent-color: #9333ea; /* Mysterious Purple */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+section {
+  padding: 100px 10%;
+  min-height: 80vh;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+}
+
+/* Add this to the end of App.css */
+@media (max-width: 768px) {
+    section {
+        padding: 80px 5%;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}

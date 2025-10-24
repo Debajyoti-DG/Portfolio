@@ -1,0 +1,266 @@
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 150px; /* Adjust for fixed navbar */
+}
+
+.home-content {
+    max-width: 50%;
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.welcome-tagline {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.home-name {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.home-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.home-image-container {
+    max-width: 40%;
+    animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.home-image {
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+}
+
+.chatbot-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1001;
+}
+
+/* src/components/02_Home/Home.css */
+
+/* ... (existing styles for .home-section, etc.) ... */
+
+/* --- NEW: Custom Keyframe Animations --- */
+
+/* Default / Recruiter Animation */
+@keyframes slideInLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.home-content.animate-recruiter {
+    animation: slideInLeft 1s ease-out;
+}
+
+/* --- NEW: Developer Two-Line Typing Animation --- */
+
+/* Keyframe for the blinking cursor */
+@keyframes blinkCaret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-color); }
+}
+
+/* Keyframes for expanding the width of each line */
+@keyframes typing-line1 {
+    to { width: 13ch; border-color: transparent; }
+}
+@keyframes typing-line2 {
+    to { width: 15ch; } /* "a Full Stack Developer." is 23 chars */
+}
+
+/* A container to wrap and align the two h1 tags */
+.home-content.animate-developer .home-name-container {
+    display: inline-block; /* Ensures the container fits the text */
+    text-align: left;
+    margin-bottom: 1.5rem; /* Replaces the original h1 margin */
+}
+
+/* Base styles for BOTH animated lines */
+.home-content.animate-developer .home-name {
+    overflow: hidden; /* Hides text until the width expands */
+    white-space: nowrap; /* Prevents wrapping during animation */
+    width: 0; /* Starts with no width, text is hidden */
+    margin: 0; /* Resets default heading margin */
+    border-right: .15em solid var(--accent-color); /* The typing caret */
+    letter-spacing: .1em;
+}
+
+/* Animation for the FIRST line */
+.home-content.animate-developer .line-1 {
+    animation:
+        typing-line1 1.2s steps(11, end) forwards,
+        blinkCaret .75s step-end 2; /* Blinks twice then stops */
+}
+
+/* Animation for the SECOND line */
+.home-content.animate-developer .line-2 {
+    animation:
+        typing-line2 2s steps(23, end) forwards,
+        blinkCaret .75s step-end infinite;
+    animation-delay: 1.5s; /* Starts after the first line is fully typed */
+}
+
+/* Ensure other elements still fade in */
+.home-content.animate-developer .welcome-tagline,
+.home-content.animate-developer .home-description,
+.home-content.animate-developer .cta-button {
+    animation: fadeIn 2s ease-in;
+}
+
+
+/* Adventurer "Zoom In" Animation */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.home-content.animate-adventurer {
+    animation: zoomIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stalker "Slow Fade" Animation */
+@keyframes slowFade {
+  from { opacity: 0; filter: blur(5px); }
+  to { opacity: 1; filter: blur(0); }
+}
+.home-content.animate-stalker {
+    animation: slowFade 2.5s ease-in-out;
+}
+
+/* Add these new styles to the end of your Home.css file */
+
+/* --- Hobbies Quick Link Button --- */
+.hobbies-quick-link {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem; /* Emoji size */
+    text-decoration: none;
+    z-index: 1001;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: glow 2.5s infinite ease-in-out;
+}
+
+.hobbies-quick-link:hover {
+    transform: scale(1.1);
+    animation-play-state: paused; /* Pause glow on hover for a better feel */
+    box-shadow: 0 0 30px var(--accent-color);
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(0, 123, 255, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); }
+}
+
+
+/* --- Main Call-to-Action Buttons Container --- */
+.cta-buttons-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows buttons to stack on smaller screens */
+    margin-top: 2.5rem; /* Adds space above the buttons */
+}
+
+/* Base style inherited from your existing .cta-button */
+/* .cta-button { ... } */
+
+
+/* --- Secondary Button Style (for Resume) --- */
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* Add this to the end of Home.css */
+@media (max-width: 992px) {
+    .home-section {
+        flex-direction: column-reverse; /* Puts image on top */
+        text-align: center;
+        gap: 2rem;
+        padding-top: 120px;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-name-container {
+        align-items: center;
+    }
+
+    .home-name.line-1, .home-name.line-2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .cta-buttons-container {
+        justify-content: center;
+    }
+
+    .home-image-container {
+        max-width: 60%;
+    }
+}
