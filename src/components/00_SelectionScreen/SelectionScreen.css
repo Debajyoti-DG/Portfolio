@@ -45,3 +45,34 @@
   color: #fff;
   box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
 }
+
+/* Tablet and smaller devices */
+@media (max-width: 768px) {
+    .selection-title {
+        font-size: 3rem; /* Reduce title size */
+        text-align: center;
+        padding: 0 20px; /* Add some padding to prevent touching edges */
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr; /* Stack buttons vertically */
+        gap: 15px;
+        width: 80%; /* Ensure buttons don't stretch full width */
+    }
+
+    .option-card {
+        padding: 25px 40px; /* Adjust padding for a better fit */
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+    .selection-title {
+        font-size: 2.2rem;
+    }
+
+    .options-grid {
+        width: 90%;
+    }
+}
