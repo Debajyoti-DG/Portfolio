@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Chatbot.css';
 
-const Chatbot = () => {
+const Chatbot = ({ onClose }) => {
     // State to hold the conversation messages
     const [messages, setMessages] = useState([
         {
@@ -114,6 +114,7 @@ const Chatbot = () => {
         <div className="chatbot-window">
             <div className="chatbot-header">
                 Debajyoti's Assistant
+                <button className="chatbot-close-btn" onClick={onClose}>×</button>
             </div>
             <div className="chatbot-body">
                 {messages.map((msg, index) => (

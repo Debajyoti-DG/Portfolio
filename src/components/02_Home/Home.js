@@ -8,6 +8,9 @@ import Chatbot from '../Chatbot/Chatbot';
 const Home = ({ userType }) => {
     const [isChatbotOpen, setChatbotOpen] = useState(false);
 
+    // This function now gets passed to the Chatbot
+    const handleCloseChatbot = () => setChatbotOpen(false);
+
     const getWelcomeMessage = () => {
         // ... (getWelcomeMessage function remains the same)
         switch (userType) {
@@ -33,13 +36,11 @@ const Home = ({ userType }) => {
                     <h1 className="home-name line-2">crafting future.</h1>
                 </div>
                 <p className="home-description">
-                    I design and build exceptional digital experiences. From complex backend systems to beautiful frontend interfaces, I bring ideas to life with code.
+                    I design and build exceptional digital experiences. From complex backend systems to intelligent AI solutions, I bring ideas to life with code.
                 </p>
                 
-                {/* NEW: Container for all CTA buttons */}
                 <div className="cta-buttons-container">
                     <a href="#projects" className="cta-button">View My Work</a>
-                    {/* NEW: LinkedIn button */}
                     <a 
                         href="https://www.linkedin.com/in/debajyoti-datta-gupta-262a82272/" 
                         target="_blank" 
@@ -48,12 +49,11 @@ const Home = ({ userType }) => {
                     >
                         LinkedIn
                     </a>
-                    {/* NEW: Resume button */}
                     <a 
                         href="/resume.pdf" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="cta-button secondary" /* Added 'secondary' class for alternate style */
+                        className="cta-button secondary"
                     >
                         My Resume
                     </a>
@@ -64,15 +64,17 @@ const Home = ({ userType }) => {
                 <img src={myPicture} alt="Rupam" className="home-image" />
             </div>
 
-            {/* NEW: Hobbies quick link button */}
             <a href="#hobbies" className="hobbies-quick-link" title="Explore My Hobbies">
                 <span>🎨</span>
             </a>
 
-            <button className="chatbot-toggle" onClick={() => setChatbotOpen(!isChatbotOpen)}>
+            {/* This toggle button now only opens the chatbot */}
+            <button className="chatbot-toggle" onClick={() => setChatbotOpen(true)}>
                 🤖
             </button>
-            {isChatbotOpen && <Chatbot />}
+
+            {/* The onClose prop is now passed to the Chatbot component */}
+            {isChatbotOpen && <Chatbot onClose={handleCloseChatbot} />}
         </section>
     );
 };
