@@ -168,3 +168,38 @@
 .chat-message p a:hover {
     opacity: 0.8;
 }
+
+@media (max-width: 768px) {
+    .chatbot-window {
+        width: 90%; /* Take up most of screen width */
+        max-width: 320px; /* But cap it at 320px */
+        height: 450px; /* Slightly shorter on mobile */
+        right: 50%; /* Center horizontally */
+        transform: translateX(50%); /* Center horizontally */
+        bottom: 70px; /* Lift it up a bit from bottom */
+    }
+
+    .chatbot-body {
+        padding: 15px; /* Smaller padding */
+    }
+
+    .chat-message {
+        max-width: 85%; /* Wider messages on mobile */
+        padding: 8px 12px; /* Smaller padding */
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
+
+    .chatbot-footer {
+        padding: 10px 15px; /* Smaller padding */
+    }
+
+    .chatbot-footer input {
+        padding: 8px; /* Smaller input field */
+        font-size: 0.9rem;
+    }
+
+    .chatbot-footer button {
+        padding: 8px 15px; /* Smaller button */
+        font-size: 0.9rem;
+    }
+}

@@ -1,3 +1,10 @@
+/* Add this to the top of App.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --primary-color: #0a0a0a;
   --secondary-color: #1a1a1a;
