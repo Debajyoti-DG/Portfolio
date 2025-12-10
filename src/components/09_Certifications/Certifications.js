@@ -27,7 +27,7 @@ const certificationsData = [
         title: "Artificial Intelligence/Machine learning using Python",
         issuer: "EUPHORIA GENX",
         date: "Issued March 2025",
-        link: "#", // Add your link here
+        link: "https://drive.google.com/file/d/1_zrll_fwKdC2i6aGJq-Y2vkgGh17WXIS/view?usp=sharing", // Add your link here
         icon: "devicon-python-plain"
     },
     {
