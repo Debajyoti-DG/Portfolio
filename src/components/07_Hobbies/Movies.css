@@ -20,7 +20,7 @@
 }
 
 .movie-card {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border-radius: 8px;
     overflow: hidden;
     text-align: left;

@@ -5,6 +5,17 @@ import './Experience.css';
 
 const timelineData = [
     {
+    type: "work",
+    title: "AI+ Insider (Student Ambassador)",
+    company: "AI+ Smartphones",
+    date: "Dec 2025 – Present",
+    details: [
+        "Providing structured feedback on smartphone hardware performance and NxtQuantum OS usability.",
+        "Participating in beta testing and feature evaluation to improve system stability and user experience.",
+        "Representating AI+ within the student community, sharing insights and reporting issues for continuous improvement."
+        ]
+    },
+    {
         type: "work",
         title: "Full Stack Developer Freelance",
         company: "Skillence",

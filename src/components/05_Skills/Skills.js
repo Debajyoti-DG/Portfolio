@@ -14,6 +14,7 @@ const skillsData = [
       { name: "MySQL", icon: "devicon-mysql-plain-wordmark" },
       { name: "MongoDB", icon: "devicon-mongodb-plain-wordmark" },
       { name: "PostgreSQL", icon: "devicon-postgresql-plain-wordmark" },
+      { name: "Redis", icon: "devicon-redis-plain-wordmark" },
     ],
   },
   {
@@ -36,6 +37,7 @@ const skillsData = [
       { name: "ChatGPT", text: "GPT" }, // Using text for non-Devicon items
       { name: "Gemini Pro", text: "API" },
       { name: "Zapier", text: "Zap" },
+      { name: "Figma", icon: "devicon-figma-plain" },
     ],
   },
   {

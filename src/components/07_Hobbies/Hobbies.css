@@ -1,5 +1,5 @@
 .hobbies-section {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .hobbies-nav {
@@ -33,7 +33,7 @@
 }
 
 .hobby-content-display {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     padding: 40px;
     border-radius: 10px;
     max-width: 900px;

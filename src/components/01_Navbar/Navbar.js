@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 
 const linkVisibility = {
-    Recruiter: new Set(['home', 'about', 'experience', 'skills', 'projects', 'hire-me']),
+    Recruiter: new Set(['home', 'about', 'experience', 'skills', 'projects', 'hire-me', 'certifications']),
     Developer: new Set(['home', 'about', 'experience', 'skills', 'projects', 'hire-me']),
     Adventurer: new Set(['home', 'about', 'projects', 'hire-me']),
     Stalker: new Set(['home', 'about', 'experience', 'skills']),
@@ -32,6 +32,7 @@ const Navbar = ({ userType, onReset }) => {
                     {visibleLinks.has('experience') && <li><a href="#experience" onClick={handleLinkClick}>Experience</a></li>}
                     {visibleLinks.has('skills') && <li><a href="#skills" onClick={handleLinkClick}>Skills</a></li>}
                     {visibleLinks.has('projects') && <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>}
+                    {visibleLinks.has('certifications') && <li><a href="#certifications" onClick={handleLinkClick}>Certifications</a></li>}
                     {visibleLinks.has('hire-me') && <li><a href="#hire-me" onClick={handleLinkClick}>Hire Me</a></li>}
                 </ul>
             </div>
